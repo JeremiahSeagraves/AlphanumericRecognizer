@@ -1,4 +1,4 @@
-package com.jeremiahseagraves.ai.web.rest;
+package com.jeremiahseagraves.ai.rest;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;

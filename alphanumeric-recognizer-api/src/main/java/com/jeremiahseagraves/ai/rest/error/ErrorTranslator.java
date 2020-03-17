@@ -1,4 +1,4 @@
-package com.jeremiahseagraves.ai.web.rest.error;
+package com.jeremiahseagraves.ai.rest.error;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

@@ -1,19 +1,15 @@
 server:
-  error:
-    whitelabel:
-      enabled: false
-  port: 8081
+  port: 8765
 
 spring:
   application:
-    name: alphanumeric-recognizer-api
+    name: alphanumeric-recognizer-admin
   profiles:
     active: dev
-  jpa:
-    show-sql: true
-    generate-ddl: true
-  mvc:
-    throw-exception-if-no-handler-found: true
+  boot:
+    admin:
+      discovery:
+        ignored-services: alphanumeric-recognizer-discovery
 
 eureka:
   client:
@@ -26,12 +22,6 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
 
 logging:
   level:
@@ -39,4 +29,3 @@ logging:
       netflix:
         eureka: OFF
         discovery: OFF
-

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: alphanumeric-recognizer-ui
+    name: alphanumeric-recognizer-ui-thymeleaf
   profiles:
     active: dev
 

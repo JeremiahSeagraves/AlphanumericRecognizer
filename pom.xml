@@ -13,7 +13,7 @@
 
     <modules>
         <module>alphanumeric-recognizer-api</module>
-        <module>alphanumeric-recognizer-ui</module>
+        <module>alphanumeric-recognizer-ui-thymeleaf</module>
         <module>alphanumeric-recognizer-admin</module>
     </modules>
 

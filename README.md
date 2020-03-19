@@ -54,7 +54,7 @@ container.
 
 And that's it!
 
-Now you can access with the previously mentioned ports from your localhost.
+Now you can access the services from your localhost.
 
 ## Accessing the services
 

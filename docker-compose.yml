@@ -1,34 +1,38 @@
 version: '3'
 services:
-  discovery:
+  discovery-service:
+    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-discovery:1.0-SNAPSHOT
     ports:
       - 8761:8761
-  config:
-    volumes:
-      - ./config-data:/var/config-data
+  admin-service:
+    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-admin:1.0-SNAPSHOT
     environment:
       - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-        -Dspring.cloud.config.server.native.searchLocations=/var/config-data
-    depends_on:
-      - discovery
-    ports:
-      - 8888:8888
-  school-service:
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-    depends_on:
-      - discovery
-      - config
-  school-ui:
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://discovery:8761/eureka
-        -Dspring.profiles.active=production
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
     restart: on-failure
     depends_on:
-      - discovery
-      - config
+      - discovery-service
+    ports:
+    - 8765:8765
+  api-service:
+    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-api:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+    restart: on-failure
+    depends_on:
+      - discovery-service
+      - admin-service
+    ports:
+      - 8081:8081
+  ui-thymeleaf-service:
+    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-ui-thymeleaf:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+    restart: on-failure
+    depends_on:
+      - discovery-service
+      - admin-service
     ports:
       - 8080:8080

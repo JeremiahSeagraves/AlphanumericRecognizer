@@ -41,25 +41,25 @@ following ports:
 - Eureka (Discovery)
   - localhost:8761
   
-  ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/eureka.png)
+  ![Eureka](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/eureka.png?raw=true)
   
 - Admin
   - localhost:8765
   
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/admin-1.png)
+    ![Spring Boot Admin 1](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/admin-1.png?raw=true)
     
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/admin-2.png)
+    ![Spring Boot Admin 2](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/admin-2.png?raw=true)
     
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/admin-3.png)
+    ![Spring Boot Admin 3](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/admin-3.png?raw=true)
 
 - API
   - localhost:8081
   
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/api.png)
+    ![API](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/api.png?raw=true)
 
 - UI-Thymeleaf
   - localhost:8080
   
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/ui-thymeleaf-1.png)
+    ![UI Thymeleaf 1](http://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-1.png?raw=true)
     
-    ![alt text](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/readme-files/ui-thymeleaf-2.png)
+    ![UI Thymeleaf 2](http://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-2.png?raw=true)

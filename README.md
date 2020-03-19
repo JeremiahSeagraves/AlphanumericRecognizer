@@ -60,6 +60,6 @@ following ports:
 - UI-Thymeleaf
   - localhost:8080
   
-    ![UI Thymeleaf 1](http://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-1.png?raw=true)
+    ![UI Thymeleaf 1](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-1.png?raw=true)
     
-    ![UI Thymeleaf 2](http://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-2.png?raw=true)
+    ![UI Thymeleaf 2](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-2.png?raw=true)

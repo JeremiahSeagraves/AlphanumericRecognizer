@@ -63,3 +63,27 @@ following ports:
     ![UI Thymeleaf 1](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-1.png?raw=true)
     
     ![UI Thymeleaf 2](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-2.png?raw=true)
+
+
+### Second way - The Dockerized way!
+First, be sure that you have docker and docker-composer installed.
+
+Then, create the images for each service with the following command:
+
+`mvn clean install`
+
+Each service has the dockerfile-maven-plugin that has the configuration
+for each service image, this plugin will be ran with the previous command.
+
+After creating images for all services, go to the root dir and run:
+
+`docker-compose up -d`
+
+This will trigger that all images be containerized and launched in a docker
+container.
+
+And that's it!
+
+Now you can access with the previously mentioned ports from your localhost.
+
+ 

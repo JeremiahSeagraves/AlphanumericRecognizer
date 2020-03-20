@@ -13,7 +13,7 @@ services:
     depends_on:
       - discovery-service
     ports:
-    - 8765:8765
+      - 8765:8765
   api-service:
     image: com.jeremiahseagraves.ai-alphanumeric-recognizer-api:1.0-SNAPSHOT
     environment:
@@ -36,3 +36,9 @@ services:
       - admin-service
     ports:
       - 8080:8080
+  ui-angular-service:
+    hostname: localhost
+    container_name: alphanumericrecognizer-ui-angular-service
+    build: .
+    ports:
+      - 4200:4200

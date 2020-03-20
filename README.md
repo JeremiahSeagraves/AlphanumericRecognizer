@@ -17,7 +17,7 @@ purposes for all microservices.
 This microservice is the one intended as the general API of the project.
 It uses Spring MVC, among other techs.
 
-### ML-Agent
+### ML Agent
 This microservice is the most important, in a business manner, since this
 is the one with the ML algorithm that identifies the characters based on
 images.

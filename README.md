@@ -17,9 +17,18 @@ purposes for all microservices.
 This microservice is the one intended as the general API of the project.
 It uses Spring MVC, among other techs.
 
+### ML-Agent
+This microservice is the most important, in a business manner, since this
+is the one with the ML algorithm that identifies the characters based on
+images.
+
 ### UI Thymeleaf
 This microservice is just to test microservice communication and
 self-discovery between API and UI.
+
+### UI Angular
+This microservice is one of a few that will have a web-client app
+for testing alphanumeric recognition.
 
 
 ## How to build and run locally
@@ -79,6 +88,10 @@ following ports:
   - localhost:8081
   
     ![API](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/api.png?raw=true)
+    
+- ML-Agent
+  - localhost:8082
+    ![ML-Agent-1](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ml-agent-1.png?raw=true)
 
 - UI-Thymeleaf
   - localhost:8080
@@ -87,4 +100,7 @@ following ports:
     
     ![UI Thymeleaf 2](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-thymeleaf-2.png?raw=true)
 
- 
+- UI-Angular
+  - localhost:4200
+  
+    ![UI Angular](https://github.com/JeremiahSeagraves/AlphanumericRecognizer/blob/master/readme-files/ui-angular-1.png?raw=true)

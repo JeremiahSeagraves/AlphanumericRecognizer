@@ -15,6 +15,7 @@
         <module>alphanumeric-recognizer-api</module>
         <module>alphanumeric-recognizer-ui-thymeleaf</module>
         <module>alphanumeric-recognizer-admin</module>
+        <module>alphanumeric-recognizer-ml-agent</module>
     </modules>
 
 

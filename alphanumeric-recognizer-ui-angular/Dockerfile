@@ -1,9 +1,26 @@
-FROM node:13.3.0 AS node
+### Local development only ###
 
-RUN mkdir /usr/src/app
+FROM node:12.8-alpine
 
-WORKDIR /usr/src/app
+# Install bash
+RUN apk add --no-cache bash
 
-RUN npm install -g @angular/cli
+# Create working directory
+RUN mkdir -p /home/node/app
 
-COPY . .
+# Set working directory
+WORKDIR /home/node/app
+
+# Add `/home/node/app/node_modules/.bin` to $PATH
+ENV PATH /home/node/app/node_modules/.bin:$PATH
+
+# Copy code
+COPY ./ /home/node/app
+
+# Expose ports
+EXPOSE 4200:4200
+
+RUN npm install
+
+# Start Angular
+CMD ng serve --host 0.0.0.0

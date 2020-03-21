@@ -39,6 +39,8 @@ services:
   ui-angular-service:
     hostname: localhost
     container_name: alphanumericrecognizer-ui-angular-service
-    build: .
+    build:
+      context: alphanumeric-recognizer-ui-angular
+      dockerfile: Dockerfile
     ports:
       - 4200:4200

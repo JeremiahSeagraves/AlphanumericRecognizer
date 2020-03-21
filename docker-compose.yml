@@ -37,7 +37,6 @@ services:
     ports:
       - 8080:8080
   ui-angular-service:
-    hostname: localhost
     container_name: alphanumericrecognizer-ui-angular-service
     build:
       context: alphanumeric-recognizer-ui-angular

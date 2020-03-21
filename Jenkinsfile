@@ -8,6 +8,11 @@ pipeline {
                 sh 'apt-get update -y'
                 sh 'apt-get upgrade -y'
                 sh 'apt-get install git -y'
+                echo "Installing docker compose"
+                sh 'curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose'
+                sh 'chmod +x /usr/local/bin/docker-compose'
+                echo "Docker compose version"
+                sh 'docker-compose --version'
                 echo 'Cloning repo'
                 sh 'git clone https://github.com/JeremiahSeagraves/AlphanumericRecognizer.git'
                 sh "ls"
@@ -18,8 +23,23 @@ pipeline {
                 	    echo 'Running mvn clean install'
                 		sh 'mvn clean install'
                 	}
-                	sh 'docker images'
-                	sh 'docker run -d -p 8761:8761 com.jeremiahseagraves.ai-alphanumeric-recognizer-discovery:1.0-SNAPSHOT'
+                	dir("alphanumeric-recognizer-admin"){
+                	    echo 'Running mvn clean install'
+                		sh 'mvn clean install'
+                	}
+                	dir("alphanumeric-recognizer-api"){
+                	    echo 'Running mvn clean install'
+                		sh 'mvn clean install'
+                	}
+                	dir("alphanumeric-recognizer-ui-thymeleaf"){
+                	    echo 'Running mvn clean install'
+                		sh 'mvn clean install'
+                	}
+                	dir("alphanumeric-recognizer-ui-angular"){
+                	    echo 'Running docker build angular service'
+                		sh 'docker build -t angular-service:dev .'
+                	}
+                	sh 'docker-compose up -d'
                 }
             }
         }

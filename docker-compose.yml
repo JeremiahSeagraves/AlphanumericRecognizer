@@ -35,7 +35,7 @@ services:
       - discovery-service
       - admin-service
     ports:
-      - 8083:8080
+      - 8080:8080
   ui-angular-service:
     hostname: localhost
     container_name: alphanumericrecognizer-ui-angular-service

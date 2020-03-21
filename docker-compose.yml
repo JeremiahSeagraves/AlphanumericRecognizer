@@ -42,7 +42,7 @@ services:
       context: alphanumeric-recognizer-ui-angular  # Location of our Dockerfile
       dockerfile: Dockerfile
     volumes: # Volume binding
-      - './ui-angular-service:/usr/src/app'
+      - './test-project:/usr/src/app'
     ports:
       - '4200:4200' # Port mapping
     command: >

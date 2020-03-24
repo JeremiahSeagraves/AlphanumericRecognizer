@@ -24,7 +24,6 @@
         <module>admin</module>
         <module>ml-agent</module>
         <module>zuul-proxy</module>
-        <module>api-2</module>
     </modules>
 
 

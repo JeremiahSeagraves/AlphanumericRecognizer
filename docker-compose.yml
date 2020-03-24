@@ -1,11 +1,11 @@
 version: '3'
 services:
   discovery-service:
-    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-discovery:1.0-SNAPSHOT
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-discovery-server:1.0-SNAPSHOT
     ports:
       - 8761:8761
   admin-service:
-    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-admin:1.0-SNAPSHOT
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-admin-service:1.0-SNAPSHOT
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://discovery-service:8761/eureka
@@ -15,7 +15,7 @@ services:
     ports:
       - 8765:8765
   api-service:
-    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-api:1.0-SNAPSHOT
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-api-service:1.0-SNAPSHOT
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://discovery-service:8761/eureka
@@ -25,8 +25,29 @@ services:
       - admin-service
     ports:
       - 8081:8081
-  ui-thymeleaf-service:
-    image: com.jeremiahseagraves.ai-alphanumeric-recognizer-ui-thymeleaf:1.0-SNAPSHOT
+  ml-agent:
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-ml-agent:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+    restart: on-failure
+    depends_on:
+      - discovery-service
+      - admin-service
+    ports:
+      - 8082:8082
+  zuul-proxy:
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-zuul-proxy:1.0-SNAPSHOT
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka
+    restart: on-failure
+    depends_on:
+      - discovery-service
+    ports:
+      - 8762:8762
+  ui-thymeleaf-app:
+    image: com.jeremiahseagraves.ai.alphanumeric-recognizer-app-thymeleaf:1.0-SNAPSHOT
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://discovery-service:8761/eureka
@@ -36,10 +57,10 @@ services:
       - admin-service
     ports:
       - 8080:8080
-  ui-angular-service:
-    container_name: alphanumeric-recognizer-ui-angular-service
+  ui-angular-app:
+    container_name: alphanumericrecognizer-app-angular
     build:
-      context: alphanumeric-recognizer-ui-angular  # Location of our Dockerfile
+      context: app-angular  # Location of our Dockerfile
       dockerfile: Dockerfile
     ports:
       - 4200:4200 # Port mapping

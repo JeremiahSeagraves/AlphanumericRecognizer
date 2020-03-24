@@ -19,25 +19,10 @@ pipeline {
                 echo 'Repo cloned'
                 echo 'Changing directory'
                 dir ("AlphanumericRecognizer"){
-                	dir("alphanumeric-recognizer-discovery"){
-                	    echo 'Running mvn clean install'
-                		sh 'mvn clean install'
-                	}
-                	dir("alphanumeric-recognizer-admin"){
-                	    echo 'Running mvn clean install'
-                		sh 'mvn clean install'
-                	}
-                	dir("alphanumeric-recognizer-api"){
-                	    echo 'Running mvn clean install'
-                		sh 'mvn clean install'
-                	}
-                	dir("alphanumeric-recognizer-ui-thymeleaf"){
-                	    echo 'Running mvn clean install'
-                		sh 'mvn clean install'
-                	}
-                	dir("alphanumeric-recognizer-ui-angular"){
+                    sh 'mvn clean install'
+                	dir("alphanumeric-recognizer-app-angular"){
                 	    echo 'Running docker build angular service'
-                		sh 'docker build -t angular-service:dev .'
+                		sh 'docker build -t com.jeremiahseagraves.ai.alphanumeric-recognizer-app-angular .'
                 	}
                 	sh 'docker-compose up -d'
                 }

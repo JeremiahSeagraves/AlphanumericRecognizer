@@ -5,17 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jeremiahseagraves.ai</groupId>
-    <artifactId>alphanumeric-recognizer</artifactId>
+    <artifactId>alphanumeric-recognizer-parent-project</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <name>parent-project</name>
+    <name>alphanumeric-recognize-parent-project</name>
 
     <modules>
-        <module>alphanumeric-recognizer-api</module>
-        <module>alphanumeric-recognizer-ui-thymeleaf</module>
-        <module>alphanumeric-recognizer-admin</module>
-        <module>alphanumeric-recognizer-ml-agent</module>
+        <module>api</module>
+        <module>discovery-server</module>
+        <module>app-thymeleaf</module>
+        <module>admin</module>
+        <module>ml-agent</module>
+        <module>zuul-proxy</module>
     </modules>
 
 

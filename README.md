@@ -47,14 +47,14 @@ For building an running you just need to run:
 ### Second way - The Dockerized way!
 First, be sure that you have docker and docker-composer installed.
 
-Then, create the images for each service with the following command:
+Then, create the images for each service with the following command in the root folder:
 
 `mvn clean install`
 
 Each service has the dockerfile-maven-plugin that has the configuration
 for each service image, this plugin will be ran with the previous command.
 
-After creating images for all services, go to the root dir and run:
+After running the previous command from the root folder, all images will be created, then just need to run (also from root folder):
 
 `docker-compose up -d`
 

@@ -64,3 +64,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4200:4200 # Port mapping
+  mysql-alphanumeric-recognizer:
+    image: mysql:8.0.19
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: alphanumeric_recognizer
+    ports:
+      - "3308:3306"

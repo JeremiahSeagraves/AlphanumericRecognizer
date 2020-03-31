@@ -24,6 +24,7 @@
         <module>admin</module>
         <module>ml-agent</module>
         <module>zuul-proxy</module>
+        <module>classification-logger</module>
     </modules>
 
 

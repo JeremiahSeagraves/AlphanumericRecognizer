@@ -71,3 +71,13 @@ services:
       MYSQL_DATABASE: alphanumeric_recognizer
     ports:
       - "3308:3306"
+  classification-logger:
+    image: com.jeremiahseagraves.ai.classification-logger:0.0.1-SNAPSHOT
+    ports:
+      - 8083:8083
+    restart: on-failure
+    depends_on:
+      - discovery-service
+    environment:
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://discovery-service:8761/eureka

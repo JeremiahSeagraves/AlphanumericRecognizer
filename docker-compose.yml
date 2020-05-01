@@ -64,3 +64,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - 4200:4200 # Port mapping
+  ui-react-app:
+    container_name: alphanumericrecognizer-app-react
+    build:
+      context: sketchpad-alpn  # Location of our Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000 #

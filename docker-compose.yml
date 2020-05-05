@@ -81,3 +81,11 @@ services:
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://discovery-service:8761/eureka
+
+  ui-react-app:
+    container_name: alphanumericrecognizer-app-react
+    build:
+      context: sketchpad-alpn  # Location of our Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000 #

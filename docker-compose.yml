@@ -83,9 +83,12 @@ services:
         -DEUREKA_SERVER=http://discovery-service:8761/eureka
 
   ui-react-app:
+    stdin_open: true
     container_name: alphanumericrecognizer-app-react
     build:
-      context: sketchpad-alpn  # Location of our Dockerfile
+      context: app-reactjs  # Location of our Dockerfile
       dockerfile: Dockerfile
     ports:
       - 3000:3000 #
+    environment:
+      - NODE_ENV=development

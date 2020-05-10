@@ -8854,6 +8854,11 @@ resolve@^1.10.0, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.15.1, resolve@^1.3
   dependencies:
     path-parse "^1.0.6"
 
+responsive-sketchpad@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/responsive-sketchpad/-/responsive-sketchpad-0.2.1.tgz#8e5dd85f9ca073e320ab1489bafd82625ae84cdc"
+  integrity sha512-IlCQ7rnB6xg7WpXkVI6i3kL+7oN5zdmxgUq73KX4doQGXjsuB1uaPFppx3GtRwC6getNZr90zvvB2FdVO4uOFQ==
+
 restore-cursor@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-3.1.0.tgz#39f67c54b3a7a58cea5236d95cf0034239631f7e"

@@ -1,6 +1,9 @@
 # AlphanumericRecognizer
 Microservices project for classifying English alphanumeric characters. It uses Spring Boot + Spring Cloud as microservice infrastructure, Angular 6+ as UI, DL4J as Machine Learning library and Docker as the containerizer.
 
+# Architecture
+![Eureka](https://raw.githubusercontent.com/JeremiahSeagraves/AlphanumericRecognizer/db-config/readme-files/architecture.jpeg?raw=true)
+
 # Project structure
 
 ## Microservices
